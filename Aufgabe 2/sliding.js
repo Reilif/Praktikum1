@@ -17,6 +17,8 @@ var emptyLoc = new Object;
 emptyLoc.x = 0;
 emptyLoc.y = 0;
 
+
+
 var solved = false;
 
 var boardParts;
