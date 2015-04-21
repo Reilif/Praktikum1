@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+var x = 0;
+var obj = {
+  [x]: 'hello'
+};
+-->
+<script>
+    var _defineProperty = function (obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: key == null || typeof Symbol == 'undefined' || key.constructor !== Symbol, configurable: true, writable: true }); };
+
+    var x = 0;
+    var obj = _defineProperty({}, x, 'hello');
+</script>
+</body>
+</html>

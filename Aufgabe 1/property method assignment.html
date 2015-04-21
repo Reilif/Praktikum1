@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+var object = {
+  value: 42,
+  toString() {
+    return this.value;
+  }
+};
+-->
+<script>
+    var object = {
+        value: 42,
+        toString: function toString() {
+            return this.value;
+        }
+    };
+</script>
+</body>
+</html>

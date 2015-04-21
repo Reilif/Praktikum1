@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+function f(list, indexA = 0, indexB = list.length) {
+  return [list, indexA, indexB];
+}
+-->
+<script>
+    function f(list) {
+        var indexA = arguments[1] === undefined ? 0 : arguments[1];
+        var indexB = arguments[2] === undefined ? list.length : arguments[2];
+        return (function () {
+            return [list, indexA, indexB];
+        })();
+    }
+</script>
+</body>
+</html>

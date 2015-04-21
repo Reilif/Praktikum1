@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+function push(array, ...items) {
+  items.forEach(function(item) {
+    array.push(item);
+  });
+}
+var res = [];
+push(res, 1, 2, 3);
+expect(res).to.be.eql([1, 2, 3]);
+-->
+<script>
+    function push(array) {
+        for (var _len = arguments.length, items = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            items[_key - 1] = arguments[_key];
+        }
+
+        items.forEach(function (item) {
+            array.push(item);
+        });
+    }
+    var res = [];
+    push(res, 1, 2, 3);
+    expect(res).to.be.eql([1, 2, 3]);
+</script>
+</body>
+</html>

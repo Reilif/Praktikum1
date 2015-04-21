@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+function push(array, ...items) {
+  array.push(...items);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+var numbers = [4, 38];
+-->
+<script>
+    function push(array) {
+        for (var _len = arguments.length, items = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            items[_key - 1] = arguments[_key];
+        }
+
+        array.push.apply(array, items);
+    }
+
+    function add(x, y) {
+        return x + y;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+export var firstName = 'David';
+export var lastName = 'Belle';
+export var year = 1973;
+
+// ProfileView.js
+import {firstName, lastName, year} from './Profile.js';
+
+function setHeader(element) {
+  element.textContent = firstName + ' ' + lastName;
+}
+// rest of module
+-->
+<script>
+    Object.defineProperty(exports, '__esModule', {
+        value: true
+    });
+
+    // ProfileView.js
+
+    var _firstName$lastName$year = require('./Profile.js');
+
+    var firstName = 'David';
+    exports.firstName = _firstName$lastName$year.firstName;
+    var lastName = 'Belle';
+    exports.lastName = _firstName$lastName$year.lastName;
+    var year = 1973;exports.year = _firstName$lastName$year.year;
+
+    function setHeader(element) {
+        element.textContent = _firstName$lastName$year.firstName + ' ' + _firstName$lastName$year.lastName;
+    }
+    // rest of module
+
+</script>
+</body>
+</html>

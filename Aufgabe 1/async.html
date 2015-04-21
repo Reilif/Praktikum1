@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+function timeout(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncValue(value) {
+  await timeout(50);
+  return value;
+}
+
+(async function() {
+  var value = await asyncValue(42).catch(console.error.bind(console));
+  assert.equal(42, value);
+  done();
+})();
+-->
+<script>
+    "use strict";
+
+    function timeout(ms) {
+        return new Promise(function (resolve) {
+            setTimeout(resolve, ms);
+        });
+    }
+
+    function asyncValue(value) {
+        return regeneratorRuntime.async(function asyncValue$(context$1$0) {
+            while (1) switch (context$1$0.prev = context$1$0.next) {
+                case 0:
+                    context$1$0.next = 2;
+                    return timeout(50);
+
+                case 2:
+                    return context$1$0.abrupt("return", value);
+
+                case 3:
+                case "end":
+                    return context$1$0.stop();
+            }
+        }, null, this);
+    }
+
+    (function callee$0$0() {
+        var value;
+        return regeneratorRuntime.async(function callee$0$0$(context$1$0) {
+            while (1) switch (context$1$0.prev = context$1$0.next) {
+                case 0:
+                    context$1$0.next = 2;
+                    return asyncValue(42)["catch"](console.error.bind(console));
+
+                case 2:
+                    value = context$1$0.sent;
+
+                    assert.equal(42, value);
+                    done();
+
+                case 5:
+                case "end":
+                    return context$1$0.stop();
+            }
+        }, null, this);
+    })();
+</script>
+</body>
+</html>
