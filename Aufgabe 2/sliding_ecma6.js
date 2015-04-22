@@ -9,15 +9,15 @@ var tileCount = document.getElementById('scale').value;
 
 var tileSize = boardSize / tileCount;
 
-var clickLoc = new Object;
-clickLoc.x = 0;
-clickLoc.y = 0;
+class Loc {
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+}
 
-var emptyLoc = new Object;
-emptyLoc.x = 0;
-emptyLoc.y = 0;
-
-
+var clickLoc = new Loc(0,0);
+var emptyLoc = new Loc(0,0);
 
 var solved = false;
 
@@ -76,14 +76,14 @@ function distance(...arg) {
   return Math.abs(arg[0] - arg[2]) + Math.abs(arg[1] - arg[3]);
 }
 
-function slideTile(toLoc, fromLoc) {
+function slideTile(...arg) {
   if (!solved) {
-    boardParts[toLoc.x][toLoc.y].x = boardParts[fromLoc.x][fromLoc.y].x;
-    boardParts[toLoc.x][toLoc.y].y = boardParts[fromLoc.x][fromLoc.y].y;
-    boardParts[fromLoc.x][fromLoc.y].x = tileCount - 1;
-    boardParts[fromLoc.x][fromLoc.y].y = tileCount - 1;
-    toLoc.x = fromLoc.x;
-    toLoc.y = fromLoc.y;
+    boardParts[arg[0].x][arg[0].y].x = boardParts[arg[1].x][arg[1].y].x;
+    boardParts[arg[0].x][arg[0].y].y = boardParts[arg[1].x][arg[1].y].y;
+    boardParts[arg[1].x][arg[1].y].x = tileCount - 1;
+    boardParts[arg[1].x][arg[1].y].y = tileCount - 1;
+    arg[0].x = arg[1].x;
+    arg[0].y = arg[1].y;
     checkSolved();
   }
 }
