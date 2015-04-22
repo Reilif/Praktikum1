@@ -4,22 +4,24 @@ var img = new Image();
 img.src = 'http://www.brucealderman.info/Images/dimetrodon.jpg';
 img.addEventListener('load', drawTiles, false);
 
+
+<!-- Destructiong Assignment-->
+
+
 var boardSize = document.getElementById('puzzle').width;
 var tileCount = document.getElementById('scale').value;
+var solved = false;
 
 var tileSize = boardSize / tileCount;
-
 var clickLoc = new Object;
 clickLoc.x = 0;
-clickLoc.y = 0;
 
+clickLoc.y = 0;
 var emptyLoc = new Object;
 emptyLoc.x = 0;
+
+
 emptyLoc.y = 0;
-
-
-
-var solved = false;
 
 var boardParts;
 setBoard();
